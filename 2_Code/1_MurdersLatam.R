@@ -26,9 +26,7 @@ db_1 <- read_excel("1_Data/data_cts_intentional_homicide.xlsx",
                    skip = 2) %>% 
   clean_names() 
 
-### |- ¿Cuál es el panorama mundial? ----
-
-### Evolution of intentional murder rates in Latin America
+### |- Evolution of intentional murder rates in Latin America
 db <- db_1 %>% 
   filter(indicator == "Victims of intentional homicide" & 
            subregion == "Latin America and the Caribbean" & 
@@ -43,6 +41,7 @@ db <- db_1 %>%
                                               "Brazil" = "Brazil"), 
                             false = as_factor(NA))) 
 
+# 2. Graph ----  
 db %>% 
   ggplot(aes(x = year, y = round(value, 1))) +
   geom_point(aes(colour = color), size = 3) + 

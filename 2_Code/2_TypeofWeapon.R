@@ -20,7 +20,7 @@ pacman::p_load(readxl, tidyverse, janitor, treemapify,stringr)
 
 # 1. Load data  ----
 
-# Cargar base de datos de víctimas en las carpetas de investigación
+# Load victims database
 victims <- read_excel("1_Data/Estatal-V¡ctimas-2015-2022_dic2022.xlsx")%>% 
   clean_names()
 
