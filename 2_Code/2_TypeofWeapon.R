@@ -63,7 +63,7 @@ db_1 <- db %>%
   mutate(sexo = str_replace(sexo, "Mujer", "Women")) %>%
   ungroup() 
   
-  # 2. Graph ----  
+  # 3. Graph ----  
 
 db_1 %>%  
   ggplot(aes(y = percentage, x = sexo)) +
